@@ -1,16 +1,27 @@
-<form (ngSubmit)="add()">
-  <p class="p-3 mb-2 bg-primary text-white">Articulos</p>
-  <p class="bg-warning text-danger">Union con ngModel ngSubmit descompuesto por partes(7)</p>
-  <label class="form-label">Introduce la referencia</label>
-  <input [(ngModel)]="articulo.ref" name="ref" type="string" class="form-control">
-  <label class="form-label">Introduce una breve descripcion</label>
-  <input [(ngModel)]="articulo.descripcion" name="descripcion" type="string" class="form-control">
-  <label class="form-label">Introduce precio</label>
-  <input [(ngModel)]="articulo.precio"  name="precio" type="number" class="form-control">
-  <label class="form-label">Introduce el iva</label>
-  <input [(ngModel)]="articulo.iva" name="iva" type="number" class="form-control">
-  <label class="form-label">Introduce el stock</label>
-  <input [(ngModel)]="articulo.stocks" name="stocks" type="number" class="form-control">
+<form [formGroup]="formGroup" (ngSubmit)="add()">
+  <div class="row">
+  <div class="form-group col-2">
+    <label class="form-label">Introduce la referencia</label>
+    <input name="ref" type="text" class="form-control" formControlName="ref">
+  </div>
+  <div class="form-group col-2">
+    <label class="form-label">Introduce la descripcion</label>
+    <input name="descripcion" type="text" class="form-control" formControlName="descripcion">
+  </div>
+  <div class="form-group col-2">
+    <label class="form-label">Introduce el precio</label>
+    <input name="precio" type="text" class="form-control" formControlName="precio">
+  </div>
+  <div class="form-group col-2">
+    <label class="form-label">Introduce el iva</label>
+    <input name="iva" type="text" class="form-control" formControlName="iva">
+  </div>
+  <div class="form-group col-2">
+    <label class="form-label">Introduce el stock</label>
+    <input name="stocks" type="text" class="form-control" formControlName="stocks">
+  </div>
+<div class="align-self-end col-2">
   <button class="btn btn-success" type="submit">Añadir</button>
-
+</div>
+</div>
 </form>

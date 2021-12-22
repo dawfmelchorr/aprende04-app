@@ -14,10 +14,10 @@
     <td>{{articulo.ref}}</td>
     <td>{{articulo.descripcion}}</td>
     <td>{{articulo.precio | currency:'EUR'}}</td>
-    <td>{{articulo.iva}}</td>
-    <td>{{articulo.stocks}}</td>
+    <td>{{articulo.iva | percent}}</td>
+    <td>{{articulo.stocks | number}}</td>
 
-      <td><button (click)="borrarFila(i)">Borrar</button></td>
+      <td><button (click)="borrarFila(articulo.id)" class="btn btn-danger">Borrar</button></td>
     </tr>
   </tbody>
 

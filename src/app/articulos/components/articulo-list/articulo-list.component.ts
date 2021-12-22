@@ -12,10 +12,12 @@ export class ArticuloListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  get articulos(){
-    return this.articulosService.articulos}
+  get articulos() {
+    return this.articulosService.articulos
+  }
 
-borrarFila(pos: number){
-  this.articulosService.borrarFila(pos);
+  borrarFila(id: number) {
+    this.articulosService.borrarFila(id);
+  }
 }
-}
+
