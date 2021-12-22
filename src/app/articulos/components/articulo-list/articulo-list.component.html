@@ -1,1 +1,25 @@
-<p>articulo-list works!</p>
+<table class="table" *ngIf="articulos.length!=0">
+  <thead>
+    <th>#</th>
+    <th>Referencia</th>
+    <th>Descripcion</th>
+    <th>Precio</th>
+    <th>IVA</th>
+    <th>Stock</th>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let articulo of articulos; let i = index">
+      <td>{{i+1}}</td>
+    <td>{{articulo.ref}}</td>
+    <td>{{articulo.descripcion}}</td>
+    <td>{{articulo.precio | currency:'EUR'}}</td>
+    <td>{{articulo.iva}}</td>
+    <td>{{articulo.stocks}}</td>
+
+      <td><button (click)="borrarFila(i)">Borrar</button></td>
+    </tr>
+  </tbody>
+
+</table>
+<p *ngIf="articulos.length==0">No hay articulos en la BD</p>

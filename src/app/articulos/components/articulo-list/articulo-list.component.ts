@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticulosService } from '../../services/articulos.service';
 
 @Component({
   selector: 'app-articulo-list',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticuloListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private articulosService: ArticulosService) { }
 
   ngOnInit(): void {
   }
+  get articulos(){
+    return this.articulosService.articulos}
 
+borrarFila(pos: number){
+  this.articulosService.borrarFila(pos);
+}
 }
